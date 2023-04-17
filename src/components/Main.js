@@ -13,12 +13,14 @@ function Main(props) {
       setUserName(data.name);
       setUserDescription(data.about);
       setUserAvatar(data.avatar)
-    });
+    })
+    .catch((err) => console.log(err));
 
     api.getInitialCards().then((data) => {
       setCards(data)
-    });
-  });
+    })
+    .catch((err) => console.log(err));
+  }, []);
 
   const [cards, setCards] = React.useState([]);
 
@@ -55,7 +57,7 @@ function Main(props) {
       <section className="elements">
         <ul className="element">
           {cards.map((card) => (
-            <Card card={card} onCardClick={props.onImage} />
+            <Card card={card} key={card._id} onCardClick={props.onImage} />
           ))}
         </ul>
       </section>

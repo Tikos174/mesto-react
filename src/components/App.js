@@ -44,7 +44,7 @@ function App() {
   }
 
   return (
-    <body className="body">
+    <div className="body">
       <div className="page">
         <Header />
         <Main
@@ -64,7 +64,7 @@ function App() {
           onClose={closeAllPopups}
         />
       </div>
-    </body>
+    </div>
   );
 }
 

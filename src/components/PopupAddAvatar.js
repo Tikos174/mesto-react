@@ -21,7 +21,7 @@ function PopupAddAvatar(props) {
                 className="popup__input-save popup__input-save_type_nameNew"
                 placeholder="Сcылка на аватар"
               />
-              <span id="avatar-link-error" class="popup__input-error"></span>
+              <span id="avatar-link-error" className="popup__input-error"></span>
             </div>
         </PopupWithForm>
     )
