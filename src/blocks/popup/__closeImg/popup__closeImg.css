@@ -5,11 +5,11 @@
   min-height: 32px;
   background-size: contain;
   padding: 0;
-  left: 640px;
+  left: 10px;
   cursor: pointer;
   border: none;
   position: relative;
-  bottom: 20px;
+  bottom: 10px;
 }
 
 .popup__closeImg:hover {

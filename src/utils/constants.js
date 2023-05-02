@@ -9,8 +9,8 @@ const inputNameProfession = document.querySelector(
 const buttonOpenEditCard = document.querySelector(".profile__button-add");
 const buttonOpenPopupAvatar = document.querySelector(".profile__img");
 
-const nameProfilUSS = document.querySelector(".profile__name");
-const profilTextUSS = document.querySelector(".profile__text");
+const nameProfil = document.querySelector(".profile__name");
+const profilText = document.querySelector(".profile__text");
 
 const buttonSafeAvatar = document.querySelector(".popup__button-delete")
 
@@ -27,4 +27,4 @@ const addCard = document.querySelector(".popup__input-New");
 const addAvatar = document.querySelector(".popup__input-Avatar");
 
 export {buttonOpenEditProfile, buttonSafeCard, inputNameUser, inputNameProfession, buttonOpenEditCard, buttonOpenPopupAvatar,
-enableValidation, buttonSafeAvatar, profil, addCard, addAvatar}
+enableValidation, buttonSafeAvatar, profil, addCard, addAvatar, nameProfil, profilText}

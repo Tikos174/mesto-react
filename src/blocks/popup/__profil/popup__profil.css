@@ -1,9 +1,9 @@
 .popup__profil {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 10px;
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 10px;
+    margin: 0;
 }
 
 @media screen and (max-width: 400px) {

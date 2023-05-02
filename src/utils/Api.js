@@ -23,7 +23,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify(data),
+      body: JSON.stringify({name: data.name, link: data.link}),
     }).then((res) => this._checkResponse(res));
   }
 
@@ -34,19 +34,19 @@ class Api {
     }).then((res) => this._checkResponse(res));
   }
 
-  patchProfil(name, about) {
+  patchProfil(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({ name: name, about: about }),
+      body: JSON.stringify({ name: data.name, about: data.about }),
     }).then((res) => this._checkResponse(res));
   }
 
-  editProfilAvatar(avatar) {
+  editProfilAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({ avatar: avatar }),
+      body: JSON.stringify({ avatar: data.avatar }),
     }).then((res) => this._checkResponse(res));
   }
 

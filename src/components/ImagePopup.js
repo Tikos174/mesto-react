@@ -13,8 +13,16 @@ function ImagePopup(props) {
           onClick={props.onClose}
           className="popup__close popup__closeImg"
         ></button>
-        <img alt={props.card.name} className="popup__image" src={props.card.link} />
-        <p className="popup__text-profil">{props.card.name}</p>
+        <figure>
+          <img
+            alt={props.card.name}
+            className="popup__image"
+            src={props.card.link}
+          />
+          <figcaption className="popup__text-profil">
+            {props.card.name}
+          </figcaption>
+        </figure>
       </div>
     </div>
   );
