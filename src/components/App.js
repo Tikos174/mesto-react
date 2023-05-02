@@ -6,8 +6,8 @@ import PopupAddCard from "./PopupAddCard";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import ImagePopup from "./ImagePopup";
-import api from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import api from "../utils/Api";
 // import PopupDeleteCard from "./PopupDeleteCard";
 
 function App() {
@@ -21,7 +21,6 @@ function App() {
         setCurrentUser(data);
       })
       .catch((err) => console.log(err));
-
     api
       .getInitialCards()
       .then((data) => {
@@ -95,7 +94,7 @@ function App() {
     api
       .patchProfil(data)
       .then((data) => {
-        setCurrentUser(data.name, data.about);
+        setCurrentUser(data);
       })
       .catch((err) => console.log(err));
       closeAllPopups()
@@ -105,7 +104,7 @@ function App() {
     api
       .editProfilAvatar(data)
       .then((data) => {
-        setCurrentUser(data.avatar);
+        setCurrentUser(data);
       })
       .catch((err) => console.log(err));
       closeAllPopups()
