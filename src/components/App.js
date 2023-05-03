@@ -33,15 +33,23 @@ function App() {
     // Снова проверяем, есть ли уже лайк на этой карточке
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
     if (!isLiked) {
-      api.addLike(card._id, !isLiked)
-      .then((newCard) => {
-      setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
-    });
+      api
+        .addLike(card._id, !isLiked)
+        .then((newCard) => {
+          setCards((state) =>
+            state.map((c) => (c._id === card._id ? newCard : c))
+          );
+        })
+        .catch((err) => console.log(err));
     } else {
-      api.deleteLike(card._id, !isLiked)
-      .then((newCard) => {
-      setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
-    });
+      api
+        .deleteLike(card._id, !isLiked)
+        .then((newCard) => {
+          setCards((state) =>
+            state.map((c) => (c._id === card._id ? newCard : c))
+          );
+        })
+        .catch((err) => console.log(err));
     }
   }
 
@@ -95,9 +103,9 @@ function App() {
       .patchProfil(data)
       .then((data) => {
         setCurrentUser(data);
+        closeAllPopups();
       })
       .catch((err) => console.log(err));
-      closeAllPopups()
   }
 
   function handleUpdateAvatar(data) {
@@ -105,9 +113,9 @@ function App() {
       .editProfilAvatar(data)
       .then((data) => {
         setCurrentUser(data);
+        closeAllPopups();
       })
       .catch((err) => console.log(err));
-      closeAllPopups()
   }
 
   function handleAddPlaceSubmit(data) {
@@ -115,9 +123,9 @@ function App() {
       .addCard(data)
       .then((newCard) => {
         setCards([newCard, ...cards]);
+        closeAllPopups();
       })
       .catch((err) => console.log(err));
-      closeAllPopups()
   }
 
   function handleCardDelete(card) {
@@ -141,7 +149,7 @@ function App() {
             onImage={handleCardClick}
             onCardLike={handleCardLike}
             cards={cards}
-            onCardDelete={handleCardDelete} 
+            onCardDelete={handleCardDelete}
           />
           <Footer />
           <PopupAddCard

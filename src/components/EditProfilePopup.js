@@ -42,7 +42,7 @@ function EditProfilePopup(props){
             <div className="popup__input-list">
               <input
                 onChange={handleChangeName}
-                value={name}
+                value={name || ''}
                 id="names-link"
                 required
                 minLength="2"
@@ -57,7 +57,7 @@ function EditProfilePopup(props){
             <div className="popup__input-list">
               <input
                 onChange={handleChangeDescription}
-                value={description}
+                value={description || ''}
                 id="abouts-link"
                 required
                 minLength="2"

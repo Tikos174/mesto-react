@@ -37,7 +37,7 @@ function PopupAddCard(props) {
     >
       <div className="popup__input-list">
         <input
-          value={name}
+          value={name || ''}
           onChange={handleAddName}
           id="names-link"
           required
@@ -52,7 +52,7 @@ function PopupAddCard(props) {
       </div>
       <div className="popup__input-list">
         <input
-          value={image}
+          value={image || ''}
           onChange={handleAddeImage}
           id="abouts-link"
           required
